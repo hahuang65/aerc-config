@@ -3,7 +3,7 @@
 if [ $(uname) == "Darwin" ]
 then
   CONFIG_DIR="${HOME}/Library/Preferences/aerc"
-elif [ $(uname) == "Darwin" ]
+elif [ $(uname) == "Linux" ]
 then
   CONFIG_DIR="${HOME}/.config/aerc"
 else
@@ -15,3 +15,8 @@ mkdir -p ${CONFIG_DIR}
 ln -sf "${PWD}/accounts.conf" "${CONFIG_DIR}/accounts.conf"
 ln -sf "${PWD}/aerc.conf" "${CONFIG_DIR}/aerc.conf"
 ln -sf "${PWD}/binds.conf" "${CONFIG_DIR}/binds.conf"
+
+if [ $(uname) == "Darwin" ]
+then
+  chmod 600 ${CONFIG_DIR}/accounts.conf
+fi
