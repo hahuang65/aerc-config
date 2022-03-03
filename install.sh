@@ -16,7 +16,4 @@ ln -sf "${PWD}/accounts.conf" "${CONFIG_DIR}/accounts.conf"
 ln -sf "${PWD}/aerc.conf" "${CONFIG_DIR}/aerc.conf"
 ln -sf "${PWD}/binds.conf" "${CONFIG_DIR}/binds.conf"
 
-if [ $(uname) == "Darwin" ]
-then
-  chmod 600 ${CONFIG_DIR}/accounts.conf
-fi
+chmod 600 ${CONFIG_DIR}/accounts.conf
